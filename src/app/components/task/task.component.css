@@ -1,0 +1,21 @@
+
+.navbar {
+  padding: 1rem;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}
+
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #0984E2;
+  color: #fff;
+}
+
+.logout{
+  background-color: #164A84;
+}
