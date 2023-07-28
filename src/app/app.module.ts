@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { StatusTaskService } from './services/status-task.service';
 import { JwtInterceptor } from './services/jwt.interceptor';
+import { ToastNoAnimationModule, ToastrModule, provideToastr } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,11 +21,16 @@ import { JwtInterceptor } from './services/jwt.interceptor';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    ToastNoAnimationModule.forRoot()
   ],
   providers: [LoginService,TaskService,
     StatusTaskService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    provideToastr()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
