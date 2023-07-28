@@ -19,3 +19,38 @@
 .logout{
   background-color: #164A84;
 }
+
+
+.container-task{
+  width: 80%;
+  margin-left: 10%;
+}
+.delete-button,.delete-button:hover {
+  background-color: #DC2626; /* Color rojo */
+  color: #fff; /* Color del texto en blanco */
+  border: none; /* Sin borde */
+  margin-left: 5px; /* Espacio entre el botón de editar y eliminar */
+}
+
+.new-button{
+  background-color: #0984E2;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.new-button:hover{
+  background-color: #2880BC;
+  color:#fff;
+}
+
+.p-field{
+  margin: 10px;
+  margin-bottom: 15px;
+}
+.p-field label{
+ margin-right: 8px;
+}
+.p-button-secondary{
+  margin-left: 10px;
+}

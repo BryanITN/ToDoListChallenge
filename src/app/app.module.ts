@@ -13,6 +13,11 @@ import { JwtInterceptor } from './services/jwt.interceptor';
 import { ToastNoAnimationModule, ToastrModule, provideToastr } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'task', component: TaskComponent },
@@ -30,6 +35,11 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    TableModule,
+    ButtonModule,
+    DialogModule,
+    DropdownModule,
+    ConfirmDialogModule,
     ToastrModule.forRoot(),
     ToastNoAnimationModule.forRoot(),
     RouterModule.forRoot(routes)

@@ -23,7 +23,7 @@ export class TaskService {
     return this.http.delete(`${this.apiUrl}/Task/${id}`);
   }
   GetAllTaskByUser(userId:number){
-    return this.http.get<GetTaskResponse>(`${this.apiUrl}/Task?userId=${userId}`);
+    return this.http.get<GetTaskResponse[]>(`${this.apiUrl}/Task?userId=${userId}`);
   }
   GetTaskById(id:number){
     return this.http.get<GetTaskResponse>(`${this.apiUrl}/Task/${id}`);

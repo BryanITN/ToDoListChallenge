@@ -12,6 +12,6 @@ export class StatusTaskService {
   constructor(private http:HttpClient) { }
 
   GetStatusTask(){
-    return this.http.get<GetStatusTaskResponse>(`${this.apiUrl}/StatusTask`);
+    return this.http.get<GetStatusTaskResponse[]>(`${this.apiUrl}/StatusTask`);
   }
 }

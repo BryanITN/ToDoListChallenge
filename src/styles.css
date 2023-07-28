@@ -1,3 +1,6 @@
+@import url("../node_modules/primeicons/primeicons.css");
+@import url("../node_modules/primeng/resources/themes/saga-orange/theme.css");
+@import url("../node_modules/primeng/resources/primeng.min.css");
 *{
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
@@ -9,9 +12,6 @@ body{
 }
 
 
-/* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */
-
-/* position */
 .toast-center-center {
   top: 50%;
   left: 50%;

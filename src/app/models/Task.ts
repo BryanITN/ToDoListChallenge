@@ -9,7 +9,7 @@ export interface GetTaskResponse {
 }
 
 export interface CreateUpdateTask {
-  CreatedDate:  Date;
+  CreatedDate:  Date|string;
   Title:        string;
   Description:  string;
   UserId:       number;
