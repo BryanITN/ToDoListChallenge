@@ -6,11 +6,12 @@ import { GetStatusTaskResponse } from 'src/app/models/StatusTask';
 import { CreateUpdateTask, GetTaskResponse } from 'src/app/models/Task';
 import { StatusTaskService } from 'src/app/services/status-task.service';
 import { TaskService } from 'src/app/services/task.service';
-
+import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: ['./task.component.css']
+  styleUrls: ['./task.component.css'],
+  providers: [ConfirmationService, MessageService]
 })
 export class TaskComponent implements OnInit{
   tasks: GetTaskResponse[] = [];
@@ -24,7 +25,7 @@ export class TaskComponent implements OnInit{
     description: new FormControl('',Validators.required),
     statusTaskId: new FormControl(Validators.required)
   });
-  constructor(private taskService:TaskService,private route:Router,private toast:ToastrService,private statusTaskService:StatusTaskService) { }
+  constructor(private taskService:TaskService,private route:Router,private toast:ToastrService,private statusTaskService:StatusTaskService, private confirmationService: ConfirmationService, private messageService: MessageService) { }
   ngOnInit(): void {
   this.getTask();
   this.statusTaskService.GetStatusTask().subscribe(response=>{
@@ -118,4 +119,28 @@ export class TaskComponent implements OnInit{
       });
   }
   }
+
+  confirmDelete(task: GetTaskResponse) {
+    this.confirmationService.confirm({
+        message: 'Seguro que desea eliminar la tarea?',
+        header: 'Eliminar Tarea',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () => {
+           this.taskService.DeleteTask(task.Id).subscribe(data=>{
+            this.toast.success("Tarea eliminada correctamente","Tarea");
+            this.getTask();
+           },err=>{
+            this.toast.error(err.error.Message,"Error");
+           });
+        },
+        reject: () => {
+
+        }
+    });
+}
+ logout(){
+  localStorage.removeItem('UserId');
+  localStorage.removeItem('Token');
+  this.route.navigate(['/login']);
+ }
 }
