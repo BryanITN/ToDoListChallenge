@@ -1,1 +1,61 @@
-<p>login works!</p>
+<h1 class="text-center mt-2">
+  <span class="company">Joffroy</span> <span class="app"> ToDoList</span>
+</h1>
+<div class="container-card">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group my-2">
+            <label for="UserName" class="label-title mb-1"
+              >Usuario<sup>*</sup>:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="UserName"
+              formControlName="UserName"
+              placeholder="Ingresa tu usuario"
+            />
+            <div *ngIf="isInvalid('UserName')">
+              <small
+                class="text-danger mt-1"
+                *ngIf="loginForm.get('UserName')?.errors?.required"
+              >
+                El usuario es requerido.
+              </small>
+            </div>
+          </div>
+          <div class="form-group mb-2 mt-4">
+            <label for="Password" class="label-title mb-1"
+              >Contraseña<sup>*</sup>:</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="Password"
+              formControlName="Password"
+              placeholder="Ingresa tu contraseña"
+            />
+            <div *ngIf="isInvalid('Password')">
+              <small
+                class="text-danger mt-1"
+                *ngIf="loginForm.get('Password')?.errors?.required"
+              >
+                La contraseña es requerida.
+              </small>
+            </div>
+          </div>
+          <p class="my-1"><sup>*</sup>Campos obligatorios</p>
+          <button
+            type="submit"
+            class="btn-block mt-2"
+            [disabled]="loginForm.invalid"
+          >
+            Iniciar sesión
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

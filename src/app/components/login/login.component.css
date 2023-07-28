@@ -1,0 +1,40 @@
+.container-card{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 400px;
+}
+
+.label-title{
+  color: #164A84;
+}
+h1{
+  font-size: 28px;
+  font-weight: 600;
+}
+.app{
+  color: #164A84;
+}
+.card-body{
+  height: 400px;
+}
+button{
+  width: 100%;
+  background-color: #164A84;
+  color: #fff;
+  padding: 6px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+p{
+  font-size: 12px;
+  font-weight: 600;
+}
