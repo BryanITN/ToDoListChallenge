@@ -18,6 +18,7 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'task', component: TaskComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
     DialogModule,
     DropdownModule,
     ConfirmDialogModule,
+    ToastModule,
     ToastrModule.forRoot(),
     ToastNoAnimationModule.forRoot(),
     RouterModule.forRoot(routes)
